@@ -83,4 +83,4 @@ The commissioning phase assumes that the environment is built.
 #dependencies
 
 * [Talos ISO](https://github.com/siderolabs/talos/releases/download/v1.0.0/talos-amd64.iso) in proxmox server iso/talos-amd64.iso
-* [Mikrotik configuration](./microtik/devel.rsc)
+* [Mikrotik configuration](./mikrotik/devel.rsc)
