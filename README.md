@@ -11,6 +11,7 @@ A repository to keep resources and configuration files used with my Kubernetes t
     * [Hardware](#hardware)
     * [Homelab Root CA](#homelab-root-ca)
 5. [Deployment](#deployment)
+6. [Dependencies](#dependencies)
 
 # Content of the Repository
 * [`docs`](./docs/) - images and documentation files.
@@ -78,3 +79,8 @@ My goal is to build a reproducible governorate cluster with devops in mind
 # Deployment
 
 The commissioning phase assumes that the environment is built.
+
+#dependencies
+
+* [Talos ISO](https://github.com/siderolabs/talos/releases/download/v1.0.0/talos-amd64.iso) in proxmox server iso/talos-amd64.iso
+* [Mikrotik configuration](./microtik/devel.rsc)
