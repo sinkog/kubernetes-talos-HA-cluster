@@ -1,4 +1,6 @@
 #!bin/bash
+GIT_BOSIS="https://github.com/sinkog/BaseOperationSystemInstallScripts.git"
+
 ### incude dependencies
 if [ -d "BaseOperationSystemInstallScripts" ]; then
   echo "git pull on the BaseOperationSystemInstallScripts directory"
@@ -9,7 +11,7 @@ if [ -d "BaseOperationSystemInstallScripts" ]; then
   fi
 else
   echo "git clone BaseOperationSystemInstallScripts"
-  if !(git clone https://github.com/sinkog/BaseOperationSystemInstallScripts.git); then
+  if !(git clone ${GIT_BOSIS} BaseOperationSystemInstallScripts); then
     echo "git clone failed"
   fi
 fi
