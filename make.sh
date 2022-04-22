@@ -7,8 +7,8 @@ do
         gb) GIT_BOSIS=${OPTARG};;
     esac
 done
-if [ -z "${WORKDIR}" ] && WORKDIR=$(mktemp -d -t demoXXXXXX);
-if [ -z "${GIT_BOSIS}" ] && GIT_BOSIS="https://github.com/sinkog/BaseOperationSystemInstallScripts.git";
+[ -z "${WORKDIR}" ] && WORKDIR=$(mktemp -d -t demoXXXXXX)
+[ -z "${GIT_BOSIS}" ] && GIT_BOSIS="https://github.com/sinkog/BaseOperationSystemInstallScripts.git"
 
 cd ${WORKDIR}
 ### incude dependencies
