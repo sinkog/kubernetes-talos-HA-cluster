@@ -1,6 +1,17 @@
 #!bin/bash
-GIT_BOSIS="https://github.com/sinkog/BaseOperationSystemInstallScripts.git"
 
+while getopts w:gb flag
+do
+    case "${flag}" in
+        w) WORKDIR=${OPTARG};;
+        gb) GIT_BOSIS=${OPTARG};;
+    esac
+done
+if [ -z "${WORKDIR}" ] && WORKDIR=$(mktemp -d -t demoXXXXXX)
+if [ -z "${GIT_BOSIS}" ] && GIT_BOSIS="https://github.com/sinkog/BaseOperationSystemInstallScripts.git"
+
+
+cd ${WORKDIR}
 ### incude dependencies
 if [ -d "BaseOperationSystemInstallScripts" ]; then
   echo "git pull on the BaseOperationSystemInstallScripts directory"
