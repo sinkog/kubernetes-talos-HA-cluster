@@ -1,0 +1,4 @@
+controller: 
+  service:
+    externalIPs: 
+    - 10.10.110.100

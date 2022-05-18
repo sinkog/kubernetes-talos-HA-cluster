@@ -1,0 +1,9 @@
+installCRDs: true
+volumes:
+  - name: "step-certificates"
+    configMap:
+      name: "step-certificates"
+volumeMounts:
+  - name: "step-certificates"
+    mountPath: "/etc/ssl/certs/cert-ca.crt"
+    subPath: "ca-certificates.crt"

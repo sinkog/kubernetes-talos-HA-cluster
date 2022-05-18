@@ -1,0 +1,66 @@
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: cert-devel
+spec:
+  acme:
+    email: admin@local
+    server: https://step-certificates.ca.svc.cluster.local/acme/acme/directory
+    #skipTLSVerify: true
+    privateKeySecretRef:
+      name: cert-devel-private-key
+    solvers:
+    - http01:
+        ingress:
+          class: public
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: cert-test
+spec:
+  acme:
+    email: admin@local
+    server: https://step-certificates.ca.svc.cluster.local/acme/acme/directory
+    #skipTLSVerify: true
+    privateKeySecretRef:
+      name: cert-test-private-key
+    solvers:
+    - http01:
+        ingress:
+          class: public
+
+
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: cert-service
+spec:
+  acme:
+    email: admin@local
+    server: https://step-certificates.ca.svc.cluster.local/acme/acme/directory
+    #skipTLSVerify: true
+    privateKeySecretRef:
+      name: cert-service-private-key
+    solvers:
+    - http01:
+        ingress:
+          class: public
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: cert-public-service
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: admin@local
+    privateKeySecretRef:
+      name: cert-public-service
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
+---

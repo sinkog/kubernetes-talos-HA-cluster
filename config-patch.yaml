@@ -1,0 +1,25 @@
+- op: replace
+  path: /machine/registries
+  value:
+    mirrors: 
+      docker.io: 
+        endpoints: 
+          - http://registry.test.mmsone.lan:5000
+      gcr.io:
+        endpoints: 
+          - http://registry.test.mmsone.lan:5003
+      ghcr.io: 
+        endpoints:
+          - http://registry.test.mmsone.lan:5004
+      k8s.gcr.io: 
+        endpoints:
+          - http://registry.test.mmsone.lan:5001
+      quay.io:
+        endpoints:
+          - http://registry.test.mmsone.lan:5002
+- op: replace
+  path: /cluster/network/cni
+  value:
+    name: custom
+    urls: 
+      - https://docs.projectcalico.org/archive/v3.20/manifests/canal.yaml
