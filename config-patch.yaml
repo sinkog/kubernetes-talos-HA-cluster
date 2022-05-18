@@ -1,22 +1,22 @@
-- op: replace
-  path: /machine/registries
-  value:
-    mirrors: 
-      docker.io: 
-        endpoints: 
-          - http://registry.test.lan:5000
-      gcr.io:
-        endpoints: 
-          - http://registry.test.lan:5003
-      ghcr.io: 
-        endpoints:
-          - http://registry.test.lan:5004
-      k8s.gcr.io: 
-        endpoints:
-          - http://registry.test.lan:5001
-      quay.io:
-        endpoints:
-          - http://registry.test.lan:5002
+#- op: replace
+#  path: /machine/registries
+#  value:
+#    mirrors: 
+#      docker.io: 
+#        endpoints: 
+#          - http://registry.service.lan:5000
+#      gcr.io:
+#        endpoints: 
+#          - http://registry.service.lan:5003
+#      ghcr.io: 
+#        endpoints:
+#          - http://registry.service.lan:5004
+#      k8s.gcr.io: 
+#        endpoints:
+#          - http://registry.service.lan:5001
+#      quay.io:
+#        endpoints:
+#          - http://registry.service.lan:5002
 - op: replace
   path: /cluster/network/cni
   value:
