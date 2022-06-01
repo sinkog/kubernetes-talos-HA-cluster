@@ -18,6 +18,18 @@ step ca init --helm > ca-values.yaml
 5. What would you like to name the CA's first provisioner?
  LocalDomain
 
+Insert ito ca-values.yaml
+      authority:
+          provisioners:
+            - type: ACME
+              name: acme
+            - {"type":"JWK","name":"....
+
+ echo "step password" | base64 > ca-password.txt
+ chmod 400 ca-password.txt
+
+
+
 resource:
 proxmox server in 10.10.99.26 address
     vmbr1 bridge

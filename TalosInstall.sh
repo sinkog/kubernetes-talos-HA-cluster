@@ -24,5 +24,8 @@ export CONTROL_PLANE_IP=10.10.110.10
 while ! echo exit | nc $CONTROL_PLANE_IP 50000; do sleep 10; done
 talosctl config endpoint $CONTROL_PLANE_IP
 talosctl --talosconfig ${WORKDIR}/_out/talosconfig kubeconfig ${WORKDIR}
-cp ${WORKDIR}/kubeconfig ~/.kube/config
+mkdir -p ~/.kube
+vimdiff ${WORKDIR}/kubeconfig ~/.kube/config
+mkdir -p ~/.talos
+vimdiff ${WORKDIR}/_out ~/.kube/config
 while ! echo exit | talosctl health --talosconfig ${WORKDIR}/_out/talosconfig --wait-timeout 10s ; do sleep 10; done
